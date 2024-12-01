@@ -8,6 +8,7 @@ version = "0.1.0"
 dependencies = [
  "aoc-runner",
  "aoc-runner-derive",
+ "codspeed-bencher-compat",
  "codspeed-criterion-compat",
 ]
 
@@ -66,6 +67,12 @@ name = "autocfg"
 version = "1.4.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "ace50bade8e6234aa140d9a2f552bbee1db4d353f69b8217bc503490fc1a9f26"
+
+[[package]]
+name = "bencher"
+version = "0.1.5"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "7dfdb4953a096c551ce9ace855a604d702e6e62d77fac690575ae347571717f5"
 
 [[package]]
 name = "bumpalo"
@@ -146,6 +153,16 @@ dependencies = [
  "colored",
  "libc",
  "serde_json",
+]
+
+[[package]]
+name = "codspeed-bencher-compat"
+version = "2.7.2"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "025afeee31b5b589484a884c7eb92bf80e0a5420bc4cb1f00d3a08c000211558"
+dependencies = [
+ "bencher",
+ "codspeed",
 ]
 
 [[package]]
