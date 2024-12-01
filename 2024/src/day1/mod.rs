@@ -1,7 +1,6 @@
 use aoc_runner_derive::{aoc, aoc_generator};
 
-#[aoc_generator(day1)]
-pub fn input_generator(input: &str) -> Vec<Vec<i32>> {
+pub fn parse_input_day1(input: &str) -> Vec<Vec<i32>> {
     let mut columns = Vec::new();
     for line in input.lines() {
         for (i, x) in line.split_whitespace().enumerate() {
@@ -12,20 +11,22 @@ pub fn input_generator(input: &str) -> Vec<Vec<i32>> {
             columns[i].push(num);
         }
     }
-    columns
+    columns 
 }
 
 #[aoc(day1, part1)]
-pub fn solve_part1(input: &Vec<Vec<i32>>) -> i32 {
-    let sorted_columns = sort_columns(input);
+pub fn part1(input: &str) -> i32 {
+    let input = parse_input_day1(input);
+    let sorted_columns = sort_columns(&input);
     let result = substract_columns(&sorted_columns);
 
     result.iter().sum()
 }
 
 #[aoc(day1, part2)]
-pub fn solve_part2(input: &Vec<Vec<i32>>) -> i32 {
-    let sorted_columns = sort_columns(input);
+pub fn part2(input: &str) -> i32 {
+    let input = parse_input_day1(input);
+    let sorted_columns = sort_columns(&input);
 
     calculate_similarity(&sorted_columns)
 }

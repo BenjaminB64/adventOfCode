@@ -4,20 +4,33 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="CargoProjects">
-    <cargoProject FILE="$PROJECT_DIR$/2024/01/HistorianHysteria/Cargo.toml" />
+    <cargoProject FILE="$PROJECT_DIR$/2024/Cargo.toml" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="101b08f0-2181-4c9a-82e2-fe29ad0ae77c" name="Changes" comment="Create 2022 folder and start 2024">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="101b08f0-2181-4c9a-82e2-fe29ad0ae77c" name="Changes" comment="test">
+      <change afterPath="$PROJECT_DIR$/.github/workflows/codspeed.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/2024/benches/bench.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/2024/Cargo.lock" beforeDir="false" afterPath="$PROJECT_DIR$/2024/Cargo.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/2024/Cargo.toml" beforeDir="false" afterPath="$PROJECT_DIR$/2024/Cargo.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/2024/src/day1/mod.rs" beforeDir="false" afterPath="$PROJECT_DIR$/2024/src/day1/mod.rs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="RsBuildProfile:dev" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="RsBuildProfile:release" />
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Rust File" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RESET_MODE" value="MIXED" />
   </component>
   <component name="MacroExpansionManager">
     <option name="directoryName" value="1iwjywkw" />
@@ -30,27 +43,32 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Cargo.Run.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "RunOnceActivity.rust.reset.selective.auto.import": "true",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "/home/benji/Workspace/github.com/BenjaminB64/adventOfCode",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "org.rust.cargo.project.model.PROJECT_DISCOVERY": "true",
-    "org.rust.first.attach.projects": "true",
-    "settings.editor.selected.configurable": "language.rust.cargo.check",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Cargo.Run.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.rust.reset.selective.auto.import&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/benji/Workspace/github.com/jpverkamp/advent-of-code/2024&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;org.rust.cargo.project.model.PROJECT_DISCOVERY&quot;: &quot;true&quot;,
+    &quot;org.rust.cargo.project.model.impl.CargoExternalSystemProjectAware.subscribe.first.balloon&quot;: &quot;&quot;,
+    &quot;org.rust.disableDetachedFileInspection/home/benji/Workspace/github.com/BenjaminB64/adventOfCode/2024/src/day1/day1.rs&quot;: &quot;true&quot;,
+    &quot;org.rust.first.attach.projects&quot;: &quot;true&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;language.rust.cargo.check&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/2024/src/day1" />
+      <recent name="$PROJECT_DIR$/2024" />
+      <recent name="$PROJECT_DIR$/2024/01" />
       <recent name="$PROJECT_DIR$/2024/01/HistorianHysteria/inputs" />
       <recent name="$PROJECT_DIR$/2022" />
     </key>
@@ -58,11 +76,11 @@
   <component name="RsExternalLinterProjectSettings">
     <option name="runOnTheFly" value="true" />
   </component>
-  <component name="RunManager">
-    <configuration name="Run" type="CargoCommandRunConfiguration" factoryName="Cargo Command" nameIsGenerated="true">
-      <option name="buildProfileId" value="dev" />
-      <option name="command" value="run" />
-      <option name="workingDirectory" value="file://$PROJECT_DIR$/2024/01/HistorianHysteria" />
+  <component name="RunManager" selected="Cargo.Bench">
+    <configuration name="Bench" type="CargoCommandRunConfiguration" factoryName="Cargo Command" nameIsGenerated="true">
+      <option name="buildProfileId" value="bench" />
+      <option name="command" value="bench" />
+      <option name="workingDirectory" value="file://$PROJECT_DIR$/2024" />
       <envs />
       <option name="emulateTerminal" value="true" />
       <option name="channel" value="DEFAULT" />
@@ -77,6 +95,28 @@
         <option name="CARGO.BUILD_TASK_PROVIDER" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Run" type="CargoCommandRunConfiguration" factoryName="Cargo Command" nameIsGenerated="true">
+      <option name="buildProfileId" value="release" />
+      <option name="command" value="run" />
+      <option name="workingDirectory" value="file://$PROJECT_DIR$/2024" />
+      <envs />
+      <option name="emulateTerminal" value="true" />
+      <option name="channel" value="STABLE" />
+      <option name="requiredFeatures" value="true" />
+      <option name="allFeatures" value="false" />
+      <option name="withSudo" value="false" />
+      <option name="buildTarget" value="REMOTE" />
+      <option name="backtrace" value="SHORT" />
+      <option name="isRedirectInput" value="false" />
+      <option name="redirectInputPath" value="" />
+      <method v="2">
+        <option name="CARGO.BUILD_TASK_PROVIDER" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Cargo.Run" />
+      <item itemvalue="Cargo.Bench" />
+    </list>
   </component>
   <component name="RustProjectSettings">
     <option name="toolchainHomeDirectory" value="$USER_HOME$/.cargo/bin" />
@@ -91,7 +131,8 @@
       <updated>1733051151498</updated>
       <workItem from="1733051152565" duration="103000" />
       <workItem from="1733051260729" duration="268000" />
-      <workItem from="1733051533106" duration="3156000" />
+      <workItem from="1733051533106" duration="20573000" />
+      <workItem from="1733076647246" duration="4370000" />
     </task>
     <task id="LOCAL-00001" summary="Create 2022 folder and start 2024">
       <option name="closed" value="true" />
@@ -101,7 +142,71 @@
       <option name="project" value="LOCAL" />
       <updated>1733051497011</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Update .gitignore">
+      <option name="closed" value="true" />
+      <created>1733054711181</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1733054711181</updated>
+    </task>
+    <task id="LOCAL-00003" summary="First part of 01/12/2024">
+      <option name="closed" value="true" />
+      <created>1733054745267</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1733054745267</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Second part of 01/12/2024">
+      <option name="closed" value="true" />
+      <created>1733058450356</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1733058450356</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Setup cargo aoc">
+      <option name="closed" value="true" />
+      <created>1733068226172</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1733068226172</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Improve day 1">
+      <option name="closed" value="true" />
+      <created>1733069702870</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1733069702870</updated>
+    </task>
+    <task id="LOCAL-00007" summary="test">
+      <option name="closed" value="true" />
+      <created>1733071226402</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1733071226402</updated>
+    </task>
+    <task id="LOCAL-00008" summary="test">
+      <option name="closed" value="true" />
+      <created>1733072527690</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1733072527690</updated>
+    </task>
+    <task id="LOCAL-00009" summary="test">
+      <option name="closed" value="true" />
+      <created>1733078829316</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1733078829316</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -112,7 +217,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="LONG_EDGES_VISIBLE" value="true" />
+            </State>
           </value>
         </entry>
       </map>
@@ -122,7 +229,13 @@
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
     <MESSAGE value="Create 2022 folder and start 2024" />
-    <option name="LAST_COMMIT_MESSAGE" value="Create 2022 folder and start 2024" />
+    <MESSAGE value="Update .gitignore" />
+    <MESSAGE value="First part of 01/12/2024" />
+    <MESSAGE value="Second part of 01/12/2024" />
+    <MESSAGE value="Setup cargo aoc" />
+    <MESSAGE value="Improve day 1" />
+    <MESSAGE value="test" />
+    <option name="LAST_COMMIT_MESSAGE" value="test" />
     <option name="NON_MODAL_COMMIT_POSTPONE_SLOW_CHECKS" value="false" />
   </component>
 </project>
