@@ -1,4 +1,4 @@
-use aoc_runner_derive::{aoc, aoc_generator};
+use aoc_runner_derive::{aoc};
 
 pub fn parse_input_day1(input: &str) -> Vec<Vec<i32>> {
     let mut columns = Vec::new();
