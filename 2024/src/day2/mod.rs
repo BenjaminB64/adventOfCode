@@ -14,7 +14,7 @@ pub fn part1(input: &str) -> u16 {
     let lines = parse_input_day2(input);
     let mut nb_safe = 0;
     for i in 0..lines.len() {
-        if is_safe(&lines[i]) == 0 {
+        if is_safe(&lines[i], None) == 0 {
             nb_safe += 1;
         }
     }
@@ -26,8 +26,12 @@ pub fn part2(input: &str) -> u16 {
     let lines = parse_input_day2(input);
     let mut nb_safe = 0;
     for i in 0..lines.len() {
+        if is_safe(&lines[i], None) == 0 {
+            nb_safe += 1;
+            continue;
+        }
         for j in 0..lines[i].len() {
-            if is_safe(&try_without_number(&lines[i], j)) == 0 {
+            if is_safe(&lines[i], Some(j)) == 0 {
                 nb_safe += 1;
                 break;
             }
@@ -36,29 +40,36 @@ pub fn part2(input: &str) -> u16 {
     nb_safe
 }
 
-pub fn try_without_number(line: &Vec<u8>, index: usize) -> Vec<u8> {
-    let mut new_line = Vec::new();
+pub fn is_safe(line: &[u8], index_ignore: Option<usize>) -> usize {
+    let mut last_index = None;
+    let mut direction = None; 
+    let mut current_direction;
+    
     for i in 0..line.len() {
-        if i != index {
-            new_line.push(line[i]);
+        if let Some(index) = index_ignore {
+            if i == index {
+                continue;
+            }
         }
-    }
-    new_line
-}
 
-pub fn is_safe(line: &Vec<u8>) -> usize {
-    let increase_or_decrease = get_increase_or_decrease(line[1], line[0]);
-    for i in 1..line.len() {
-        if line[i].abs_diff(line[i - 1]) > 3 || line[i] == line[i - 1] {
-            return i;
+        if let Some(last_i) = last_index {
+            if line[i].abs_diff(line[last_i]) > 3 || line[i] == line[last_i] {
+                return i;
+            }
+
+            current_direction = line[i] > line[last_i];
+
+            if let Some(dir) = direction {
+                if dir != current_direction {
+                    return i;
+                }
+            } else {
+                direction = Some(current_direction);
+            }
         }
-        if increase_or_decrease != get_increase_or_decrease(line[i], line[i - 1]) {
-            return i;
-        }
+
+        last_index = Some(i);
     }
+
     0
-}
-
-pub fn get_increase_or_decrease(n1: u8, n2: u8) -> bool {
-    n2 > n1
 }
