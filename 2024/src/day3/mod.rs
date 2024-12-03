@@ -11,8 +11,8 @@ pub fn parse_input_day3_part1(input: &str) -> Vec<(u16, u16)> {
     let input_len = input.len();
     let mut found = false;
 
-    let mut first: Vec<u8> = Vec::new();
-    let mut second: Vec<u8> = Vec::new();
+    let mut first: Vec<u8>;
+    let mut second: Vec<u8>;
 
     while i < input.len() {
         first = Vec::new();
@@ -71,8 +71,8 @@ pub fn parse_input_day3_part2(input: &str) -> Vec<(u16, u16)> {
     let input_len = input.len();
     let mut found = false;
 
-    let mut first: Vec<u8> = Vec::new();
-    let mut second: Vec<u8> = Vec::new();
+    let mut first: Vec<u8>;
+    let mut second: Vec<u8>;
 
     let look_for_do = "do()";
     let look_for_dont = "don't()";
@@ -103,7 +103,6 @@ pub fn parse_input_day3_part2(input: &str) -> Vec<(u16, u16)> {
         }
         first = Vec::new();
         second = Vec::new();
-        // check if it's a m
         if input_bytes[i] == b'm' {
             for k in 0..look_for_len {
                 if i + k >= input_len || input_bytes[i + k] != look_for.as_bytes()[k] {
@@ -160,7 +159,7 @@ pub fn part1(input: &str) -> i32 {
     let lines = parse_input_day3_part1(input);
     let mut sum: u64 = 0;
     for line in lines {
-        sum += (line.0 as u64 * line.1 as u64);
+        sum += line.0 as u64 * line.1 as u64;
     }
 
     sum as i32
@@ -171,7 +170,7 @@ pub fn part2(input: &str) -> i32 {
     let lines = parse_input_day3_part2(input);
     let mut sum: u64 = 0;
     for line in lines {
-        sum += (line.0 as u64 * line.1 as u64);
+        sum += line.0 as u64 * line.1 as u64;
     }
 
     sum as i32
