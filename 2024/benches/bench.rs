@@ -23,6 +23,6 @@ pub fn day3(c: &mut Criterion) {
     c.bench_function("day3 part2", |b| b.iter(|| day3_part2(black_box(DAY_3_INPUT))));
 }
 
-criterion_group!(benches, day1, day2);
+criterion_group!(benches, day1, day2, day3);
 
 criterion_main!(benches);
