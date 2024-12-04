@@ -1,6 +1,7 @@
 use advent_of_code_2024::day1::{part1, part2};
 use advent_of_code_2024::day2::{part1 as day2_part1, part2 as day2_part2};
 use advent_of_code_2024::day3::{part1 as day3_part1, part2 as day3_part2};
+use advent_of_code_2024::day4::{part1 as day4_part1, part2 as day4_part2};
 
 use criterion::{black_box, criterion_group, criterion_main, Criterion};
 
@@ -21,6 +22,11 @@ pub fn day2(c: &mut Criterion) {
 pub fn day3(c: &mut Criterion) {
     c.bench_function("day3 part1", |b| b.iter(|| day3_part1(black_box(DAY_3_INPUT))));
     c.bench_function("day3 part2", |b| b.iter(|| day3_part2(black_box(DAY_3_INPUT))));
+}
+
+pub fn day4(c: &mut Criterion) {
+    c.bench_function("day4 part1", |b| b.iter(|| day4_part1(black_box(DAY_4_INPUT))));
+    c.bench_function("day4 part2", |b| b.iter(|| day4_part2(black_box(DAY_4_INPUT))));
 }
 
 criterion_group!(benches, day1, day2, day3);
