@@ -30,7 +30,7 @@ pub fn parse_input_day5_part1(input: &str) -> u32 {
             for k in 0..order.len() {
                 if order[k].0 == updates[i][j] {
                     if updates[i].contains(&order[k].1) {
-                        let mut value = points.get(&order[k].0);
+                        let value = points.get(&order[k].0);
                         if let Some(value) = value {
                             points.insert(order[k].0, *value + 1);
                         } else {
@@ -77,7 +77,7 @@ pub fn parse_input_day5_part2(input: &str) -> u32 {
         let update = input_bytes[i].split(|x| *x == b',').map(|x| ((x[0] - b'0') * 10 + (x[1] - b'0')) as u32).collect();
         updates.push(update);
     }
-    let mut correct_ordered = 0;
+
     for i in 0..updates.len() {
         let mut correct = true;
         let mut points: HashMap<u32, u32> = HashMap::new();
@@ -86,7 +86,7 @@ pub fn parse_input_day5_part2(input: &str) -> u32 {
             for k in 0..order.len() {
                 if order[k].0 == updates[i][j] {
                     if updates[i].contains(&order[k].1) {
-                        let mut value = points.get(&order[k].0);
+                        let value = points.get(&order[k].0);
                         if let Some(value) = value {
                             points.insert(order[k].0, *value + 1);
                         } else {
