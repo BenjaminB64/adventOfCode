@@ -10,7 +10,6 @@ pub fn parse_input_day4_part1(input: &str) -> u32 {
     let line_len: u16 = get_line_length(input);
     let mut nb_found = 0;
     let input_as_bytes = input.as_bytes();
-    let input_len: u32 = input.len() as u32;
 
     let nb_lines = line_len;
     let nb_lines_limit = nb_lines - 3;
