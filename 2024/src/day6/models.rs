@@ -1,4 +1,3 @@
-use std::collections::HashMap;
 use std::hash::{Hash, Hasher};
 pub type Coord = (u32, u32);
 #[derive(Debug)]
@@ -150,7 +149,7 @@ impl Guardian {
         loops.len() as u32
     }
 }
-
+#[allow(dead_code)]
 fn print_map(coord_obs: &Vec<(u32, u32)>, guardian: &Guardian, size_x: u32, size_y: u32, history: Vec<Guardian>) {
     println!("---------------------");
     for y in 0..size_y {
