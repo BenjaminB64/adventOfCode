@@ -31,7 +31,7 @@ pub fn day3(c: &mut Criterion) {
 
 pub fn day4(c: &mut Criterion) {
     c.bench_function("day4 part1", |b| b.iter(|| day4_part1(black_box(DAY_4_INPUT))));
-    c.bench_function("day4 part2", |b| b.iter(|| day4_part2(black_box(DAY_4_INPUT))));
+    //c.bench_function("day4 part2", |b| b.iter(|| day4_part2(black_box(DAY_4_INPUT))));
 }
 
 pub fn day5(c: &mut Criterion) {
