@@ -50,6 +50,6 @@ fn bruteforce(inputs: &Vec<u64>, result: u64, r: u64) -> bool {
     }
     let mut new_inputs = inputs.clone();
     let current = new_inputs.remove(0);
-    
+
     bruteforce(&new_inputs, result,r + current) || bruteforce(&new_inputs, result, r * current)
 }
