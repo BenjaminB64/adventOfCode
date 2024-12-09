@@ -6,6 +6,7 @@ use advent_of_code_2024::day5::{part1 as day5_part1, part2 as day5_part2};
 use advent_of_code_2024::day6::{part1 as day6_part1, part2 as day6_part2};
 use advent_of_code_2024::day7::{part1 as day7_part1, part2 as day7_part2};
 use advent_of_code_2024::day8::{part1 as day8_part1, part2 as day8_part2};
+use advent_of_code_2024::day9::{part1 as day9_part1, part2 as day9_part2};
 
 use criterion::{black_box, criterion_group, criterion_main, Criterion};
 
@@ -17,6 +18,7 @@ const DAY_5_INPUT: &str = include_str!("../input/2024/day5.txt");
 const DAY_6_INPUT: &str = include_str!("../input/2024/day6.txt");
 const DAY_7_INPUT: &str = include_str!("../input/2024/day7.txt");
 const DAY_8_INPUT: &str = include_str!("../input/2024/day8.txt");
+const DAY_9_INPUT: &str = include_str!("../input/2024/day9.txt");
 
 pub fn day1(c: &mut Criterion) {
     c.bench_function("day1 part1", |b| b.iter(|| part1(black_box(INPUT))));
@@ -58,7 +60,12 @@ pub fn day8(c: &mut Criterion) {
     c.bench_function("day8 part2", |b| b.iter(|| day8_part2(black_box(DAY_8_INPUT))));
 }
 
+pub fn day9(c: &mut Criterion) {
+    c.bench_function("day9 part1", |b| b.iter(|| part1(black_box(INPUT))));
+    c.bench_function("day9 part2", |b| b.iter(|| part2(black_box(INPUT))));
+}
 
-criterion_group!(benches, day1, day2, day3, day4, day5, day6, day7, day8);
+
+criterion_group!(benches, day1, day2, day3, day4, day5, day6, day7, day8, day9);
 
 criterion_main!(benches);
