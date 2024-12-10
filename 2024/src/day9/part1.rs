@@ -1,4 +1,4 @@
-use crate::day9::models::{blocks_to_string, Block, DiskMap};
+use crate::day9::models::{Block, DiskMap};
 
 pub fn parse_input_day9(input: &str) -> DiskMap {
     let mut blocks: Vec<Block> = vec![];
