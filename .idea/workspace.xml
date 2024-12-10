@@ -8,19 +8,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="101b08f0-2181-4c9a-82e2-fe29ad0ae77c" name="Changes" comment="test">
-      <change afterPath="$PROJECT_DIR$/.github/workflows/codspeed.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/2024/benches/bench.rs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/2024/Cargo.lock" beforeDir="false" afterPath="$PROJECT_DIR$/2024/Cargo.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/2024/Cargo.toml" beforeDir="false" afterPath="$PROJECT_DIR$/2024/Cargo.toml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/2024/src/day1/mod.rs" beforeDir="false" afterPath="$PROJECT_DIR$/2024/src/day1/mod.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/2024/src/day10/mod.rs" beforeDir="false" afterPath="$PROJECT_DIR$/2024/src/day10/mod.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/2024/src/day10/models.rs" beforeDir="false" afterPath="$PROJECT_DIR$/2024/src/day10/models.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/2024/src/day10/part1.rs" beforeDir="false" afterPath="$PROJECT_DIR$/2024/src/day10/part1.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/2024/src/day9/models.rs" beforeDir="false" afterPath="$PROJECT_DIR$/2024/src/day9/models.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/2024/src/day9/part1.rs" beforeDir="false" afterPath="$PROJECT_DIR$/2024/src/day9/part1.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/2024/src/day9/part2.rs" beforeDir="false" afterPath="$PROJECT_DIR$/2024/src/day9/part2.rs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="RsBuildProfile:release" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="RsBuildProfile:test" />
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
@@ -29,6 +30,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="8184877b208006413f1eb98d03ed82a702d5db6d" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RESET_MODE" value="MIXED" />
   </component>
@@ -43,28 +49,38 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Cargo.Run.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.rust.reset.selective.auto.import&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/benji/Workspace/github.com/jpverkamp/advent-of-code/2024&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;org.rust.cargo.project.model.PROJECT_DISCOVERY&quot;: &quot;true&quot;,
-    &quot;org.rust.cargo.project.model.impl.CargoExternalSystemProjectAware.subscribe.first.balloon&quot;: &quot;&quot;,
-    &quot;org.rust.disableDetachedFileInspection/home/benji/Workspace/github.com/BenjaminB64/adventOfCode/2024/src/day1/day1.rs&quot;: &quot;true&quot;,
-    &quot;org.rust.first.attach.projects&quot;: &quot;true&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;language.rust.cargo.check&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Cargo.Run.executor": "Run",
+    "Cargo.Test day10::tests::part1_example.executor": "Run",
+    "Cargo.Test day10::tests::part1_example2.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.rust.reset.selective.auto.import": "true",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "/home/benji/Workspace/github.com/BenjaminB64/adventOfCode/2024/src",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "org.rust.cargo.project.model.PROJECT_DISCOVERY": "true",
+    "org.rust.cargo.project.model.impl.CargoExternalSystemProjectAware.subscribe.first.balloon": "",
+    "org.rust.disableDetachedFileInspection/home/benji/Workspace/github.com/BenjaminB64/adventOfCode/2024/src/day1/day1.rs": "true",
+    "org.rust.first.attach.projects": "true",
+    "settings.editor.selected.configurable": "language.rust.cargo.check",
+    "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File": [
+      "JSON"
+    ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/2024/src" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/2024/src/day1" />
       <recent name="$PROJECT_DIR$/2024" />
@@ -76,7 +92,7 @@
   <component name="RsExternalLinterProjectSettings">
     <option name="runOnTheFly" value="true" />
   </component>
-  <component name="RunManager" selected="Cargo.Bench">
+  <component name="RunManager" selected="Cargo.Test day10::tests::part1_example2">
     <configuration name="Bench" type="CargoCommandRunConfiguration" factoryName="Cargo Command" nameIsGenerated="true">
       <option name="buildProfileId" value="bench" />
       <option name="command" value="bench" />
@@ -113,10 +129,53 @@
         <option name="CARGO.BUILD_TASK_PROVIDER" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Test day10::tests::part1_example" type="CargoCommandRunConfiguration" factoryName="Cargo Command" temporary="true">
+      <option name="buildProfileId" value="test" />
+      <option name="command" value="test --package advent-of-code-2024 --lib day10::tests::part1_example -- --exact" />
+      <option name="workingDirectory" value="file://$PROJECT_DIR$/2024" />
+      <envs />
+      <option name="emulateTerminal" value="true" />
+      <option name="channel" value="DEFAULT" />
+      <option name="requiredFeatures" value="true" />
+      <option name="allFeatures" value="false" />
+      <option name="withSudo" value="false" />
+      <option name="buildTarget" value="REMOTE" />
+      <option name="backtrace" value="SHORT" />
+      <option name="isRedirectInput" value="false" />
+      <option name="redirectInputPath" value="" />
+      <method v="2">
+        <option name="CARGO.BUILD_TASK_PROVIDER" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Test day10::tests::part1_example2" type="CargoCommandRunConfiguration" factoryName="Cargo Command" temporary="true">
+      <option name="command" value="test --package advent-of-code-2024 --lib day10::tests::part1_example2 -- --exact" />
+      <option name="workingDirectory" value="file://$PROJECT_DIR$/2024" />
+      <envs />
+      <option name="emulateTerminal" value="true" />
+      <option name="channel" value="DEFAULT" />
+      <option name="requiredFeatures" value="true" />
+      <option name="allFeatures" value="false" />
+      <option name="withSudo" value="false" />
+      <option name="buildTarget" value="REMOTE" />
+      <option name="backtrace" value="SHORT" />
+      <option name="isRedirectInput" value="false" />
+      <option name="redirectInputPath" value="" />
+      <method v="2">
+        <option name="CARGO.BUILD_TASK_PROVIDER" enabled="true" />
+      </method>
+    </configuration>
     <list>
       <item itemvalue="Cargo.Run" />
       <item itemvalue="Cargo.Bench" />
+      <item itemvalue="Cargo.Test day10::tests::part1_example" />
+      <item itemvalue="Cargo.Test day10::tests::part1_example2" />
     </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Cargo.Test day10::tests::part1_example2" />
+        <item itemvalue="Cargo.Test day10::tests::part1_example" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="RustProjectSettings">
     <option name="toolchainHomeDirectory" value="$USER_HOME$/.cargo/bin" />
@@ -206,7 +265,23 @@
       <option name="project" value="LOCAL" />
       <updated>1733078829316</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="test">
+      <option name="closed" value="true" />
+      <created>1733835404283</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1733835404283</updated>
+    </task>
+    <task id="LOCAL-00011" summary="test">
+      <option name="closed" value="true" />
+      <created>1733835482750</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1733835482750</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

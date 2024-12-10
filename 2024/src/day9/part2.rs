@@ -1,4 +1,4 @@
-use crate::day9::models::{blocks_to_string, Block, DiskMap};
+use crate::day9::models::{Block, DiskMap};
 
 pub fn calc_checksum_part2(map: DiskMap) -> u64 {
     let mut blocks = map.blocks.clone();

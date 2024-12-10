@@ -28,6 +28,7 @@ impl Clone for DiskMap {
 }
 
 impl DiskMap {
+    #[allow(dead_code)]
     pub fn to_string(&self) -> String {
         blocks_to_string(&self.blocks)
     }
