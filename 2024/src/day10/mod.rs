@@ -3,16 +3,17 @@ mod part2;
 mod part1;
 
 use aoc_runner_derive::{aoc};
-use crate::day10::part1::{parse_input_day9, find_trailheads};
+use crate::day10::part1::{parse_input_day10, find_trailheads};
+use crate::day10::part2::find_trailheads_part2;
 
 #[aoc(day10, part1)]
 pub fn part1(input: &str) -> u32 {
-    find_trailheads(&parse_input_day9(input))
+    find_trailheads(&parse_input_day10(input))
 }
 
 #[aoc(day10, part2)]
-pub fn part2(_input: &str) -> u64 {
-    0
+pub fn part2(input: &str) -> u32 {
+    find_trailheads_part2(&parse_input_day10(input))
 }
 
 
@@ -47,6 +48,6 @@ mod tests {
 
     #[test]
     fn part2_example() {
-        assert_eq!(part2(EXAMPLE), 0);
+        assert_eq!(part2(EXAMPLE), 81);
     }
 }

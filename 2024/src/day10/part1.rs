@@ -1,7 +1,7 @@
 use std::collections::HashSet;
 use crate::day10::models::Map;
 
-pub fn parse_input_day9(input: &str) -> Map {
+pub fn parse_input_day10(input: &str) -> Map {
     let mut rows = vec![];
     let mut width = 0;
     let mut i = 0;
