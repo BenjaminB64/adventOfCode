@@ -9,6 +9,7 @@ use advent_of_code_2024::day8::{part1 as day8_part1, part2 as day8_part2};
 use advent_of_code_2024::day9::{part1 as day9_part1, part2 as day9_part2};
 use advent_of_code_2024::day10::{part1 as day10_part1, part2 as day10_part2};
 use advent_of_code_2024::day11::{part1 as day11_part1, part2 as day11_part2};
+use advent_of_code_2024::day12::{part1 as day12_part1, part2 as day12_part2};
 
 use criterion::{black_box, criterion_group, criterion_main, Criterion};
 
@@ -23,6 +24,7 @@ const DAY_8_INPUT: &str = include_str!("../input/2024/day8.txt");
 const DAY_9_INPUT: &str = include_str!("../input/2024/day9.txt");
 const DAY_10_INPUT: &str = include_str!("../input/2024/day10.txt");
 const DAY_11_INPUT: &str = include_str!("../input/2024/day11.txt");
+const DAY_12_INPUT: &str = include_str!("../input/2024/day12.txt");
 
 pub fn day1(c: &mut Criterion) {
     c.bench_function("day1 part1", |b| b.iter(|| part1(black_box(INPUT))));
@@ -53,7 +55,7 @@ pub fn day6(c: &mut Criterion) {
     c.bench_function("day6 part1", |b| b.iter(|| day6_part1(black_box(DAY_6_INPUT))));
     //c.bench_function("day6 part2", |b| b.iter(|| day6_part2(black_box(DAY_6_INPUT))));
 }
-
+                                                                                         
 pub fn day7(c: &mut Criterion) {
     c.bench_function("day7 part1", |b| b.iter(|| day7_part1(black_box(DAY_7_INPUT))));
     c.bench_function("day7 part2", |b| b.iter(|| day7_part2(black_box(DAY_7_INPUT))));
@@ -78,7 +80,11 @@ pub fn day11(c: &mut Criterion) {
     c.bench_function("day11 part2", |b| b.iter(|| day11_part2(black_box(INPUT))));
 }
 
+pub fn day12(c: &mut Criterion) {
+    c.bench_function("day12 part1", |b| b.iter(|| day12_part1(black_box(INPUT))));
+    c.bench_function("day12 part2", |b| b.iter(|| day12_part2(black_box(INPUT))));
+}
 
-criterion_group!(benches, day1, day2, day3, day4, day5, day6, day7, day8, day9, day10, day11);
+criterion_group!(benches, day1, day2, day3, day4, day5, day6, day7, day8, day9, day10, day11, day12);
 
 criterion_main!(benches);
