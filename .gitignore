@@ -1,2 +1,4 @@
 **/input.txt
 **/target
+**/input/**
+.idea
