@@ -19,16 +19,37 @@ pub fn part2(input: &str) -> u32 {
 
 #[cfg(test)]
 mod tests {
-    const EXAMPLE: &str = r"AAABBBD
-CCCDDDD";
+    const LARGE_EXAMPLE: &str = r"RRRRIICCFF
+RRRRIICCCF
+VVRRRCCFFF
+VVRCCCJFFF
+VVVVCJJCFE
+VVIVCCJJEE
+VVIIICJJEE
+MIIIIIJJEE
+MIIISIJEEE
+MMMISSJEEE
+";
+    const EXAMPLE: &str = r"AAAAAA
+AAABBA
+AAABBA
+ABBAAA
+ABBAAA
+AAAAAA
+";
     use super::*;
 
     #[test]
-    fn part1_example() {
-        assert_eq!(part1(EXAMPLE), 1930);
+    fn part1_large_example() {
+        assert_eq!(part1(LARGE_EXAMPLE), 1930);
     }
     #[test]
+    fn part2_large_example() {
+        assert_eq!(part2(LARGE_EXAMPLE), 1206);
+    }
+
+    #[test]
     fn part2_example() {
-        assert_eq!(part2(EXAMPLE), 1206);
+        assert_eq!(part2(EXAMPLE), 368);
     }
 }

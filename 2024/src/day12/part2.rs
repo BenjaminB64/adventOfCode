@@ -13,11 +13,12 @@ pub fn calc_fence_price_part2(garden: &mut Garden) -> u32 {
             }
         }
     }
-    // Ici, on peut par exemple calculer le prix en fonction du nombre de côtés
+
     let price = regions.iter().map(|r| r.area * r.sides).sum();
     price
 }
 
+const deltas: [(i32, i32); 4] = [(0, -1), (1, 0), (0, 1), (-1, 0)];
 
 fn calc_region_part2(garden: &mut Garden, start_x: u32, start_y: u32) -> Region {
     let region_id = garden.get_plot(start_x, start_y).unwrap().id;
@@ -26,103 +27,76 @@ fn calc_region_part2(garden: &mut Garden, start_x: u32, start_y: u32) -> Region 
         area: 0,
         perimeter: 0,
         sides: 0,
-        edges: HashSet::new(),
+        edges: Default::default(),
     };
 
-    let mut stack = vec![(start_x, start_y)];
+    let mut history: HashSet<(i32, i32)> = HashSet::new();
 
-    while let Some((x, y)) = stack.pop() {
-        if x >= garden.width || y >= garden.height {
-            continue;
-        }
-        let plot = garden.get_plot(x, y);
-        if plot.is_none() {
-            continue;
-        }
-        let plot = plot.unwrap();
-        if plot.counted || plot.id != region.id {
-            continue;
+    let mut queue: Vec<((i32, i32), Vec<bool>)> = vec![((start_x as i32, start_y as i32), vec![true; 4])];
+    while let Some((pos, mut count_perimeter_side)) = queue.pop() {
+        let neighbors: Vec<(i32, i32)> = deltas.iter().map(|(dx, dy)| (pos.0 + dx, pos.1 + dy)).collect();
+        history.insert(pos);
+        if is_on_perimeter(garden, pos){
+            println!("{:?}", pos);
+            region.area += 1;
+            garden.get_plot(pos.0 as u32, pos.1 as u32).unwrap().counted = true;
         }
 
-        plot.counted = true;
-        region.area += 1;
+        merge_duplicate(pos, &mut queue, &mut count_perimeter_side);
 
-        let mut xx = x;
-        let mut yy = y;
-        let mut edge = Edge((xx, yy), (xx, yy));
-        loop {
-            if garden.get_plot(xx, yy).unwrap().id != region_id {
-                region.sides += 1;
-                edge.1 = (xx-1, yy);
-                break;
+        for (i, neighbor) in neighbors.iter().enumerate() {
+            if (is_on_perimeter(garden, *neighbor) && garden.get_plot(neighbor.0 as u32, neighbor.1 as u32).unwrap().id == region_id) || history.contains(neighbor) {
+                count_perimeter_side[i] = true;
+            } else {
+                if count_perimeter_side[i] {
+                    region.sides += 1;
+                }
+                count_perimeter_side[i] = false;
             }
-            garden.get_plot(xx, yy).unwrap().counted = true;
-            if garden.is_right(xx, yy) {
-                region.sides += 1;
-                edge.1 = (xx, yy);
-                break;
-            }
-            xx += 1;
         }
-        
-        xx = x;
-        yy = y;
-        loop {
-            if garden.get_plot(xx, yy).unwrap().id != region_id {
-                region.sides += 1;
-                edge.0 = (xx + 1, yy);
-                break;
+
+        for (i, neighbor) in neighbors.iter().enumerate() {
+            if count_perimeter_side[i] && !history.contains(neighbor) {
+                queue.insert(0,(*neighbor, count_perimeter_side.clone()));
             }
-            garden.get_plot(xx, yy).unwrap().counted = true;
-            if garden.is_left(xx, yy) {
-                region.sides += 1;
-                edge.0 = (xx, yy);
-                break;
-            }
-            xx -= 1;
         }
-        edges.insert(edge);
-        
-        xx = x;
-        yy = y;
-        edge = Edge((xx, yy), (xx, yy));
-        loop {
-            if garden.get_plot(xx, yy).unwrap().id != region_id {
-                region.sides += 1;
-                edge.1 = (xx, yy-1);
-                break;
-            }
-            garden.get_plot(xx, yy).unwrap().counted = true;
-            if garden.is_bottom(xx, yy) {
-                region.sides += 1;
-                edge.1 = (xx, yy);
-                break;
-            }
-            yy += 1;
-        }
-        
-        edges.insert(edge);
-        
-        xx = x;
-        yy = y;
-        loop {
-            if garden.get_plot(xx, yy).unwrap().id != region_id {
-                region.sides += 1;
-                edge.0 = (xx, yy + 1);
-                break;
-            }
-            garden.get_plot(xx, yy).unwrap().counted = true;
-            if garden.is_top(xx, yy) {
-                region.sides += 1;
-                edge.0 = (xx, yy);
-                break;
-            }
-            yy -= 1;
-        }
-        
-        edges.insert(edge);
-        
     }
-    println!("{:?} {:?}", edges, region.sides);
+    //println!("{:?}", region);
     region
+}
+
+fn is_on_perimeter(garden: &Garden, pos: (i32, i32)) -> bool {
+    pos.0 >= 0 && pos.1 >= 0 && pos.0 < garden.width as i32 && pos.1 < garden.height as i32
+}
+
+fn merge_duplicate(pos: (i32, i32), queue: &mut Vec<((i32, i32), Vec<bool>)>, count_perimeter_side: &mut Vec<bool>) {
+    
+    let matches = queue.
+        iter().
+        enumerate().
+        filter(|(_, plot)| plot.0 == pos).
+        collect::<Vec<_>>();
+
+    let matching_indices = matches.
+        iter().
+        map(|(index, _)| *index).
+        collect::<HashSet<_>>();
+
+    *count_perimeter_side = matches
+        .iter()
+        .map(|(_, plot)| &plot.1)
+        .fold(count_perimeter_side.clone(), |result_bools, current_bools| {
+            result_bools
+                .iter()
+                .enumerate()
+                .map(|(index, result_bool)| *result_bool && current_bools[index])
+                .collect::<Vec<_>>()
+        });
+
+    *queue = queue
+        .iter()
+        .enumerate()
+        .filter(|(index, _)| !matching_indices.contains(index))
+        .map(|(_, plot)| plot.clone())
+        .collect::<Vec<_>>();
 }
