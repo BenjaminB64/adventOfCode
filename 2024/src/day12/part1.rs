@@ -12,6 +12,8 @@ pub fn parse_input_day12(input: &str) -> Garden {
     
     // println!("{:?}", plots);
     Garden {
+        width: plots[0].len() as u32,
+        height: plots.len() as u32,
         plots
     }
 }
@@ -36,6 +38,7 @@ fn calc_region(garden: &mut Garden, x: usize, y: usize) -> Region {
         id: garden.plots[y][x].id,
         area: 0,
         perimeter: 0,
+        sides: 0,
     };
     let mut stack = vec![(x, y)];
     while let Some((x, y)) = stack.pop() {
