@@ -1,5 +1,5 @@
-use std::collections::{HashMap, HashSet};
-use crate::day12::models::{Edge, Garden, Region};
+use std::collections::{HashSet};
+use crate::day12::models::{Garden, Region};
 pub fn calc_fence_price_part2(garden: &mut Garden) -> u32 {
     let mut regions: Vec<Region> = vec![];
     for y in 0..garden.height {
@@ -18,7 +18,7 @@ pub fn calc_fence_price_part2(garden: &mut Garden) -> u32 {
     price
 }
 
-const deltas: [(i32, i32); 4] = [(0, -1), (1, 0), (0, 1), (-1, 0)];
+const DELTAS: [(i32, i32); 4] = [(0, -1), (1, 0), (0, 1), (-1, 0)];
 
 fn calc_region_part2(garden: &mut Garden, start_x: u32, start_y: u32) -> Region {
     let region_id = garden.get_plot(start_x, start_y).unwrap().id;
@@ -27,14 +27,13 @@ fn calc_region_part2(garden: &mut Garden, start_x: u32, start_y: u32) -> Region 
         area: 0,
         perimeter: 0,
         sides: 0,
-        edges: Default::default(),
     };
 
     let mut history: HashSet<(i32, i32)> = HashSet::new();
 
     let mut queue: Vec<((i32, i32), Vec<bool>)> = vec![((start_x as i32, start_y as i32), vec![true; 4])];
     while let Some((pos, mut count_perimeter_side)) = queue.pop() {
-        let neighbors: Vec<(i32, i32)> = deltas.iter().map(|(dx, dy)| (pos.0 + dx, pos.1 + dy)).collect();
+        let neighbors: Vec<(i32, i32)> = DELTAS.iter().map(|(dx, dy)| (pos.0 + dx, pos.1 + dy)).collect();
         history.insert(pos);
         if is_on_perimeter(garden, pos){
             println!("{:?}", pos);

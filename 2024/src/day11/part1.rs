@@ -40,7 +40,6 @@ pub fn calc_stones(stones: &mut Vec<u128>, nb_blink: u16) -> u64 {
 }
 
 struct Cache {
-    mult: HashMap<u128, u128>,
     split: HashMap<u128, (u128, u128)>,
     len: HashMap<u128, u16>,
     stones: HashMap<(u128, u16), u64>,
@@ -48,7 +47,6 @@ struct Cache {
 impl Default for Cache {
     fn default() -> Self {
         Cache {
-            mult: HashMap::new(),
             split: HashMap::new(),
             len: HashMap::new(),
             stones: HashMap::new(),
@@ -78,17 +76,6 @@ impl Cache {
         self.stones.insert((stone, nb_blink), r);
         r
     }
-
-    fn multiply_by_2024(&mut self, n: u128) -> u128 {
-        if let Some(v) = self.mult.get(&n) {
-            return *v;
-        }
-        let v = n * 2024;
-        self.mult.insert(n, v);
-        v
-    }
-
-
     fn len_n(&mut self, n: u128) -> u16 {
         if let Some(v) = self.len.get(&n) {
             return *v;

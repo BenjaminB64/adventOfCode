@@ -1,4 +1,3 @@
-use std::collections::HashSet;
 use crate::day10::models::Map;
 
 pub fn find_trailheads_part2(map: &Map) -> u32 {

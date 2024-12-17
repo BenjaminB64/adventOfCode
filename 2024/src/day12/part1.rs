@@ -39,7 +39,6 @@ fn calc_region(garden: &mut Garden, x: usize, y: usize) -> Region {
         area: 0,
         perimeter: 0,
         sides: 0,
-        edges: Default::default(),
     };
     let mut stack = vec![(x, y)];
     while let Some((x, y)) = stack.pop() {
